@@ -3,12 +3,6 @@
 	let { data }: PageProps = $props();
 </script>
 
-{#await data.event}
-	<p>Loading event information...</p>
-{:then value}
-	<p>This event is called {value.name}</p>
+	<p>This event is called {data.event.name}</p>
 
-	{JSON.stringify(value)}
-{:catch error}
-	<p>Error: {error.message}</p>
-{/await}
+	{JSON.stringify(data.event)}

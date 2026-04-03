@@ -6,17 +6,11 @@
 </script>
 
 <ol>
-	{#await data.events}
-		<p>Loading events...</p>
-	{:then value}
-        {#each value.items as event}
+        {#each data.events.items as event}
             <li>
                 <a href={`/events/${event.id}`}>
                     {event.name}
                 </a>
             </li>
         {/each}
-	{:catch error}
-		<p>Error: {error.message}</p>
-	{/await}
 </ol>

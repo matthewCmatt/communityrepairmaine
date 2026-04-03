@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "mendmaine/migrations"
+	_ "communityrepairmaine/migrations"
 
 	"log"
 	"os"

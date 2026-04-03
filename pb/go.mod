@@ -1,4 +1,4 @@
-module mendmaine
+module communityrepairmaine
 
 go 1.25.0
 

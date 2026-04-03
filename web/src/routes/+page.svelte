@@ -1,3 +1,5 @@
-<h1>Welcome to MendMaine!</h1>
+<h1>Welcome to the Maine repair community!</h1>
 
-<a href="/events">Events</a>
+<a href="/events/">Events</a>
+
+<a href="/about/">About</a>

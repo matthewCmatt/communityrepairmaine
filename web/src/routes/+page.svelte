@@ -10,7 +10,7 @@
     </div>
     <div>
         <h3>Host a new meetup</h3>
-        <Button.Root href="/organizers/create">Register</Button.Root>
+        <Button.Root href="/organizers/create/">Register</Button.Root>
     </div>  
 </section>
 

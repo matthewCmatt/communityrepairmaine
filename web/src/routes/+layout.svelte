@@ -12,13 +12,13 @@
 	<a href="/"> <h1>Community Repair Maine</h1></a>
 	<ul>
 		<li>
-			<a href="/events/">Events</a>
+			<a href="/events">Events</a>
 		</li>
 		<li>
-			<a href="/organizers/">Organizers</a>
+			<a href="/organizers">Organizers</a>
 		</li>
 		<li>
-			<a href="/about/">About</a>
+			<a href="/about">About</a>
 		</li>
 	</ul>
 </nav>

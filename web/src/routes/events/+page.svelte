@@ -7,7 +7,7 @@
 <ol>
 	{#each data.events.items as event}
 		<li>
-			<a href={`/events/${event.id}/`}>
+			<a href={`/events/${event.id}`}>
 				{event.name}
 			</a>
 		</li>

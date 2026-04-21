@@ -1,0 +1,26 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: web/Containerfile
+    container_name: sveltekit-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - pb
+    environment:
+      # adjust if your frontend calls PocketBase
+      POCKETBASE_URL: http://pb:8090
+
+  pb:
+    build:
+      context: .
+      dockerfile: pb/Containerfile
+    container_name: pocketbase
+    restart: unless-stopped
+    volumes:
+      - pb_data:/app/pb_data
+
+volumes:
+  pb_data:

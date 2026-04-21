@@ -3,6 +3,6 @@
 	let { data }: PageProps = $props();
 </script>
 
-	<p>This event is called {data.organizer.name}</p>
+<p>This organizer is called {data.organizer.name}</p>
 
-	{JSON.stringify(data.organizer)}
+{JSON.stringify(data.organizer)}

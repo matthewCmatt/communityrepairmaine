@@ -1,3 +1,5 @@
-This project is organized as a PocketBase (PB) backend, along with a static SvelteKit (mostly) SPA served from `/pb_public`
+This project is organized as:
+- SvelteKit via `adapter-node` (`/web/`) for web UI
+- PocketBase (`/pb/`) for database and authentication
 
-Build and serve the project using a [Containerfile](/Containerfile). UI is hardcoded to access the production PB instance, but you can change this in [/web/src/lib/pb.ts](/web/src/lib/pb.ts)
+Build and serve the project using the [compose file](/compose.yaml). UI accesses PocketBase from the `POCKETBASE_URL` environment variable

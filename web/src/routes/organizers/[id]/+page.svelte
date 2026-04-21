@@ -4,15 +4,15 @@
 	let { data }: PageProps = $props();
 </script>
 
-<h1>{data.organizer.name}</h1>
+<h2>{data.organizer.name}</h2>
 
-<h2>About</h2>
+<h3>About</h3>
 
 {#if data.organizer.website}
 	<Button.Root href={data.organizer.website}>Website</Button.Root>
 {/if}
 
-<h2>Events</h2>
+<h3>Events</h3>
 <ol>
 	{#each data.events as event}
 		<li>

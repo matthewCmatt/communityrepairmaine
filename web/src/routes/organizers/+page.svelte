@@ -4,7 +4,12 @@
 	let { data }: PageProps = $props();
 </script>
 
-<ol>
+<hgroup>
+	<h2>Event Organizers</h2>
+	<p>These individuals or organizations create repair events</p>
+</hgroup>
+
+<ul>
 	{#each data.organizers.items as org}
 		<li>
 			<a href={`/organizers/${org.id}`}>
@@ -12,4 +17,4 @@
 			</a>
 		</li>
 	{/each}
-</ol>
+</ul>

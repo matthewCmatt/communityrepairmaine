@@ -23,6 +23,6 @@ VOLUME ["/app/pb_data"]
 
 EXPOSE 8090
 
-HEALTHCHECK CMD curl -f http://localhost:3000/api/health || exit 1
+HEALTHCHECK CMD curl -f http://localhost:8090/api/health || exit 1
 
 CMD ["./pocketbase-app", "serve", "--http=0.0.0.0:8090"]

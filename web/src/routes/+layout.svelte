@@ -23,4 +23,6 @@
 	</ul>
 </nav>
 
-{@render children()}
+<main>
+	{@render children()}
+</main>

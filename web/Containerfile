@@ -12,6 +12,7 @@ RUN pnpm install --frozen-lockfile
 
 COPY web/ ./
 
+RUN pnpm prepare
 RUN pnpm build
 
 # ---- Production stage ----
@@ -29,8 +30,8 @@ RUN pnpm install --prod --frozen-lockfile
 
 COPY --from=builder /app/web/build ./build
 
-# Expose default port
 EXPOSE 3000
 
-# Start the server
+HEALTHCHECK CMD curl -f http://localhost:3000/api/health || exit 1
+
 CMD ["node", "build"]

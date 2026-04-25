@@ -9,6 +9,8 @@
 	<p>These individuals or organizations create repair events</p>
 </hgroup>
 
+<a href="/organizers/register">Register as an organizer</a>
+
 <ul>
 	{#each data.organizers.items as org}
 		<li>

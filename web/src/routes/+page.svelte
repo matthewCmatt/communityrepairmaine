@@ -1,22 +1,35 @@
 <script lang="ts">
-	import { Accordion, Button } from 'bits-ui';
+	import { Accordion } from 'bits-ui';
+	import type { PageProps } from './$types';
+	let { data }: PageProps = $props();
 </script>
+
+<svelte:head>
+	<title>Community Repair Maine</title>
+</svelte:head>
 
 <section>
 	<h2>Welcome to the Maine repair community!</h2>
 	<div>
 		<h3>Find a Repair Event near you</h3>
-		<Button.Root href="/events">Events</Button.Root>
+		<a href="/events">Events</a>
+		<ul>
+			{#each data.events.items as event}
+				<li>
+					<a href={`/events/${event.id}`}>{event.name}</a>
+				</li>
+			{/each}
+		</ul>
 	</div>
 	<div>
 		<h3>Host a new meetup</h3>
-		<Button.Root href="/organizers/create">Register</Button.Root>
+		<a href="/organizers/register">Register</a>
 	</div>
 </section>
 
-<br />
-
 <section>
+	<h3>About</h3>
+
 	<Accordion.Root type="single">
 		<Accordion.Item value="item-1">
 			<Accordion.Header>
@@ -38,4 +51,6 @@
 			>
 		</Accordion.Item>
 	</Accordion.Root>
+
+	<a href="/about">Read more about this site</a>
 </section>

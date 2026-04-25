@@ -1,6 +1,10 @@
-<p>This is a site where you can find free local repair meetups.</p>
+<script>
+	import Meta from '$lib/components/meta.svelte';
+</script>
 
-<p>This applies across the state of Maine</p>
+<Meta title="About" description="About Community Repair Maine" />
+
+<p>This is a site where you can find free local repair meetups.</p>
 
 <p>
 	The source code for this website is <a

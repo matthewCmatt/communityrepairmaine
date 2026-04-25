@@ -1,0 +1,14 @@
+:root {
+	color-scheme: light dark;
+	--color-bg: light-dark(#f2f4f7, #080a0d);
+	--color-bg-header: light-dark(#293241, #293241);
+	--color-text: light-dark(#333333, #f0f0f0);
+	--color-accent: #ee6c4d;
+
+	font-family: 'vladivostok';
+}
+
+body {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+}

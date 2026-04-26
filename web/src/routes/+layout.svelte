@@ -5,10 +5,14 @@
 	import '$lib/styles/global.css';
 	import { Menu } from 'lucide-svelte';
 	import NavMenu from '$lib/components/navmenu.svelte';
+	import { afterNavigate } from '$app/navigation';
 
 	let { children } = $props();
 
 	let menuOpen = $state(false);
+	afterNavigate(() => {
+		menuOpen = false;
+	});
 </script>
 
 <svelte:head>
@@ -74,7 +78,7 @@
 	main {
 		max-width: 70ch;
 		margin: auto;
-		padding: 2rem 0;
+		padding: 2rem 1rem;
 	}
 
 	button {
@@ -85,6 +89,7 @@
 		font: inherit;
 		cursor: pointer;
 		outline: inherit;
+		display: flex;
 	}
 
 	@media (max-width: 768px) {

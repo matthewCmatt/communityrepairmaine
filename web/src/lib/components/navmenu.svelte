@@ -23,10 +23,11 @@
 		position: absolute;
 		background-color: red;
 		height: 0;
-		transition: height 1s ease;
+		width: 100svw;
+		transition: height 0.2s ease;
 	}
 
 	ul.open {
-		height: auto;
+		height: 50svh;
 	}
 </style>

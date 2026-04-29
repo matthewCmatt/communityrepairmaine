@@ -1,17 +1,14 @@
 <script lang="ts">
-	let { open } = $props();
+	let { open = $bindable() } = $props();
 	import { Dialog } from 'bits-ui';
 	import { slide } from 'svelte/transition';
 </script>
 
 <Dialog.Root bind:open>
-	<Dialog.Portal>
-		<Dialog.Overlay />
-	</Dialog.Portal>
 	<Dialog.Content forceMount>
 		{#snippet child({ props, open })}
 			{#if open}
-				<ul transition:slide {...props} class={open ? 'open' : null}>
+				<ul transition:slide {...props}>
 					<li>
 						<a href="/events">Events</a>
 					</li>

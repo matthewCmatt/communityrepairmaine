@@ -36,7 +36,7 @@
 		<Menu strokeWidth="3" />
 	</button>
 </nav>
-<NavMenu open={menuOpen} />
+<NavMenu bind:open={menuOpen} />
 
 <main>
 	{@render children()}

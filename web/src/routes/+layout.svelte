@@ -20,7 +20,7 @@
 </svelte:head>
 
 <nav>
-	<a href="/"> <h1>Community Repair Maine</h1></a>
+	<a href="/"><h1>Community Repair Maine</h1></a>
 	<ul class="wide">
 		<li>
 			<a href="/events">Events</a>

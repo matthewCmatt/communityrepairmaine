@@ -1,18 +1,31 @@
 <script lang="ts">
 	let { open } = $props();
+	import { Dialog } from 'bits-ui';
+	import { slide } from 'svelte/transition';
 </script>
 
-<ul class={open ? 'open' : null}>
-	<li>
-		<a href="/events">Events</a>
-	</li>
-	<li>
-		<a href="/organizers">Organizers</a>
-	</li>
-	<li>
-		<a href="/about">About</a>
-	</li>
-</ul>
+<Dialog.Root bind:open>
+	<Dialog.Portal>
+		<Dialog.Overlay />
+	</Dialog.Portal>
+	<Dialog.Content forceMount>
+		{#snippet child({ props, open })}
+			{#if open}
+				<ul transition:slide {...props} class={open ? 'open' : null}>
+					<li>
+						<a href="/events">Events</a>
+					</li>
+					<li>
+						<a href="/organizers">Organizers</a>
+					</li>
+					<li>
+						<a href="/about">About</a>
+					</li>
+				</ul>
+			{/if}
+		{/snippet}
+	</Dialog.Content>
+</Dialog.Root>
 
 <style>
 	ul {
@@ -22,12 +35,9 @@
 
 		position: absolute;
 		background-color: red;
-		height: 0;
-		width: 100svw;
+		padding: 1ch;
+		width: auto;
 		transition: height 0.2s ease;
-	}
-
-	ul.open {
-		height: 50svh;
+		transition: background-color 0.2s ease;
 	}
 </style>

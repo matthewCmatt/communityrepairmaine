@@ -8,7 +8,7 @@
 	<Dialog.Content forceMount>
 		{#snippet child({ props, open })}
 			{#if open}
-				<ul transition:slide {...props}>
+				<ul transition:slide={{ duration: 200 }} {...props}>
 					<li>
 						<a href="/events">Events</a>
 					</li>

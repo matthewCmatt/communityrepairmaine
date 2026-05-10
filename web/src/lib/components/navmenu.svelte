@@ -29,11 +29,11 @@
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
+		width: 100%;
 
 		position: absolute;
 		background-color: red;
 		padding: 1ch;
-		width: auto;
 		transition: height 0.2s ease;
 		transition: background-color 0.2s ease;
 	}

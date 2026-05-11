@@ -9,10 +9,9 @@ COPY web/package.json web/pnpm-lock.yaml ./web/
 
 WORKDIR /app/web
 
-RUN pnpm install --frozen-lockfile
-
 COPY web/ ./
 
+RUN pnpm install --frozen-lockfile
 RUN pnpm prepare
 RUN pnpm build
 
@@ -26,6 +25,7 @@ RUN corepack enable
 
 COPY --from=builder /app/web/package.json ./
 COPY --from=builder /app/web/pnpm-lock.yaml ./
+COPY --from=builder /app/web/pnpm-workspace.yaml ./
 
 RUN pnpm install --prod --frozen-lockfile
 

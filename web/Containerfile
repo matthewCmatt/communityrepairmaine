@@ -9,7 +9,7 @@ COPY web/package.json web/pnpm-lock.yaml ./web/
 
 WORKDIR /app/web
 
-RUN pnpm install --frozen-lockfile --ignore-scripts=false
+RUN pnpm install --frozen-lockfile
 
 COPY web/ ./
 

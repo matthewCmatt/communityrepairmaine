@@ -19,8 +19,6 @@ RUN apk add --no-cache ca-certificates
 
 COPY --from=builder /app/pocketbase-app .
 
-VOLUME ["/app/pb_data"]
-
 EXPOSE 8090
 
 CMD ["./pocketbase-app", "serve", "--http=0.0.0.0:8090"]

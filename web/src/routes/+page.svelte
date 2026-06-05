@@ -30,27 +30,21 @@
 <section>
 	<h3>About</h3>
 
-	<Accordion.Root type="single">
-		<Accordion.Item value="item-1">
-			<Accordion.Header>
-				<Accordion.Trigger>What is a Repair Meetup?</Accordion.Trigger>
-			</Accordion.Header>
-			<Accordion.Content
-				>A repair meetup or repair cafe is a free event hosted, usually by volunteers, with the goal
-				of helping people repair their things and
-			</Accordion.Content>
-		</Accordion.Item>
-		<Accordion.Item value="item-2">
-			<Accordion.Header>
-				<Accordion.Trigger>What can I bring?</Accordion.Trigger>
-			</Accordion.Header>
-			<Accordion.Content
-				>Items and services vary by meetup, but repair cafes typically focus on textiles, small
-				appliances, and electronics. Large appliances and hazardous chemicals are not usually
-				allowed.</Accordion.Content
-			>
-		</Accordion.Item>
-	</Accordion.Root>
+	<details>
+		<summary>What is a Repair Meetup?</summary>
+		<p>
+			A repair meetup or repair cafe is a free event hosted, usually by volunteers, with the goal of
+			helping people repair their things and
+		</p>
+	</details>
+
+	<details>
+		<summary>What can I bring?</summary>
+		<p>
+			Items and services vary by meetup, but repair cafes typically focus on textiles, small
+			appliances, and electronics. Large appliances and hazardous chemicals are not usually allowed.
+		</p>
+	</details>
 
 	<a href="/about">Read more about this site</a>
 </section>

@@ -1,8 +1,11 @@
 <script lang="ts">
 	import { Button } from 'bits-ui';
 	import type { PageProps } from './$types';
+	import Meta from '$lib/components/meta.svelte';
 	let { data }: PageProps = $props();
 </script>
+
+<Meta title={`${data.organizer.name}`} description={''}></Meta>
 
 <h2>{data.organizer.name}</h2>
 

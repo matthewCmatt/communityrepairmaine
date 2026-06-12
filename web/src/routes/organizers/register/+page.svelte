@@ -1,7 +1,10 @@
 <script lang="ts">
 	import type { PageData, ActionData } from './$types';
+	import Meta from '$lib/components/meta.svelte';
 	let { data, form }: { data: PageData; form: ActionData } = $props();
 </script>
+
+<Meta title="Register" description="Register as an organizer" />
 
 <hgroup>
 	<h2>Register as an organizer</h2>

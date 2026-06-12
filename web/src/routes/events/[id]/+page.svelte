@@ -2,10 +2,14 @@
 	import type { PageProps } from './$types';
 	import { parseEventLocal } from '$lib/datetime';
 	import { Button } from 'bits-ui';
+	import Meta from '$lib/components/meta.svelte';
+
 	let { data }: PageProps = $props();
 
 	const times = $derived(parseEventLocal(data.event.start_time ?? '', data.event.end_time ?? ''));
 </script>
+
+<Meta title={`${data.event.name}`} description={`${data.event.description}`}></Meta>
 
 <h2>{data.event.name}</h2>
 

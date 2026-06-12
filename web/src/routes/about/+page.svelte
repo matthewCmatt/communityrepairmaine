@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Meta from '$lib/components/meta.svelte';
 </script>
 

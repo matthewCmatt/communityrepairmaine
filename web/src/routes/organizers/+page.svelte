@@ -1,8 +1,11 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
+	import Meta from '$lib/components/meta.svelte';
 
 	let { data }: PageProps = $props();
 </script>
+
+<Meta title="Organizers" description="List of organizers" />
 
 <hgroup>
 	<h2>Event Organizers</h2>

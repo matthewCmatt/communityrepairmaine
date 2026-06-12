@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { Accordion } from 'bits-ui';
 	import type { PageProps } from './$types';
 	let { data }: PageProps = $props();
+	import Meta from '$lib/components/meta.svelte';
 </script>
+
+<Meta title="Home" description="Home" />
 
 <svelte:head>
 	<title>Community Repair Maine</title>

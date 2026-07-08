@@ -22,7 +22,7 @@
 		Email
 		<input name="email" type="email" />
 	</label>
-	<button>Register</button>
+	<button class="button">Register</button>
 
 	{#if form?.success === true}
 		Within a few days your account will be approved and you can publish your event!

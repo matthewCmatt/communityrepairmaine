@@ -8,10 +8,17 @@
 
 <Meta title="Events" description="List of events" />
 
+<hgroup>
+	<h2>Events</h2>
+	<p>These are repair events being held soon!</p>
+</hgroup>
+
+<br />
+
 <ol>
 	{#each data.events.items as event}
 		<li>
-			<a href={`/events/${event.id}`}>
+			<a href={`/events/${event.id}`} class="button">
 				{event.name}
 			</a>
 		</li>

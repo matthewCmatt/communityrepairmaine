@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
 	import Meta from '$lib/components/meta.svelte';
+	import EventMap from '$lib/components/eventmap.svelte';
 
 	let { data }: PageProps = $props();
 </script>
@@ -16,3 +17,7 @@
 		</li>
 	{/each}
 </ol>
+
+<!-- <hr />
+
+    <EventMap></EventMap> -->

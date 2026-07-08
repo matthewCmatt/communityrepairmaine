@@ -27,6 +27,7 @@
 	"dependencies": {
 		"bits-ui": "^2.16.5",
 		"lucide-svelte": "^1.0.1",
+		"maplibre-gl": "^5.24.0",
 		"pocketbase": "^0.26.8"
 	}
 }

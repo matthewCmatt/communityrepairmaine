@@ -32,7 +32,7 @@
 		width: 100%;
 
 		position: absolute;
-		background-color: red;
+		background-color: var(--color-bg-header-2);
 		padding: 1ch;
 		transition: height 0.2s ease;
 		transition: background-color 0.2s ease;

@@ -1,20 +1,6 @@
-/* =========================
-   Shared
-========================= */
-
 import type { RecordModel } from "pocketbase";
 
-export interface BaseRecord {
-	id: string;
-	created: string; // ISO timestamp
-	updated: string; // ISO timestamp
-}
-
-/* =========================
-   Users
-========================= */
-
-export interface User extends BaseRecord {
+export interface User extends RecordModel {
 	email: string;
 	emailVisibility?: boolean;
 	verified?: boolean;
@@ -26,19 +12,11 @@ export interface User extends BaseRecord {
 	organizations?: string[]; // relation (many)
 }
 
-/* =========================
-   Organizers
-========================= */
-
-export interface Organizer extends BaseRecord {
+export interface Organizer extends RecordModel {
 	name?: string;
 	website?: string;
 	email?: string;
 }
-
-/* =========================
-   Events
-========================= */
 
 export interface Event extends RecordModel {
 	name?: string;
@@ -52,11 +30,7 @@ export interface Event extends RecordModel {
   geolocation?: { lat: number, lon: number }
 }
 
-/* =========================
-   Venues
-========================= */
-
-export interface Venue extends BaseRecord {
+export interface Venue extends RecordModel {
 	name?: string;
 
 	owner?: string; // relation → User.id

@@ -2,7 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import maplibregl from 'maplibre-gl';
 	import pkg from 'maplibre-gl';
-	const {LngLat, LngLatBounds} = pkg;
+	const { LngLat, LngLatBounds } = pkg;
 	import 'maplibre-gl/dist/maplibre-gl.css';
 	import type { Event } from '$lib/types';
 
@@ -17,7 +17,10 @@
 			style: 'https://tiles.openfreemap.org/styles/liberty',
 			center: [-69.2428, 45.3695],
 			zoom: 6.5,
-			maxBounds: new LngLatBounds(new LngLat(-71.279297, 42.875964), new LngLat(-66.708984, 47.546872))
+			maxBounds: new LngLatBounds(
+				new LngLat(-71.279297, 42.875964),
+				new LngLat(-66.708984, 47.546872)
+			)
 		});
 
 		map.on('load', () => {

@@ -1,4 +1,4 @@
-import type { RecordModel } from "pocketbase";
+import type { RecordModel } from 'pocketbase';
 
 export interface User extends RecordModel {
 	email: string;
@@ -26,8 +26,8 @@ export interface Event extends RecordModel {
 	location?: string;
 	external_links?: string;
 
-  organizer?: string; // relation → Organizer.id
-  geolocation?: { lat: number, lon: number }
+	organizer?: string; // relation → Organizer.id
+	geolocation?: { lat: number; lon: number };
 }
 
 export interface Venue extends RecordModel {

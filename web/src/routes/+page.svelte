@@ -25,7 +25,7 @@
 		</ul>
 	</div>
 
-	<hr/>
+	<hr />
 
 	<div class="side-by-side">
 		<div>
@@ -39,7 +39,7 @@
 	</div>
 </section>
 
-<hr/>
+<hr />
 
 <section>
 	<h3>About</h3>
@@ -64,12 +64,10 @@
 </section>
 
 <style>
-    @media (min-width: 600px) {
-       	.side-by-side {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-
+	@media (min-width: 600px) {
+		.side-by-side {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
 </style>

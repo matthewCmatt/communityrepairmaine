@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
 	import Meta from '$lib/components/meta.svelte';
-	import EventMap from '$lib/components/eventmap.svelte';
+	import EventMap from '$lib/components/EventMap.svelte';
+	import EventCard from '$lib/components/EventCard.svelte';
 
 	let { data }: PageProps = $props();
 </script>
@@ -17,11 +18,7 @@
 
 <ol>
 	{#each data.events as event}
-		<li>
-			<a href={`/events/${event.id}`} class="button">
-				{event.name}
-			</a>
-		</li>
+		<EventCard {event} />
 	{/each}
 </ol>
 

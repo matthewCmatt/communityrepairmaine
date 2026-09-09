@@ -1,8 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { pb } from '$lib/pb.server';
-import type { ListResult } from 'pocketbase';
-import { error } from '@sveltejs/kit';
-import type { Event, Organizer } from '$lib/types';
+import type { Event } from '$lib/types';
 
 export const load: PageServerLoad = async ({ params }) => {
 	let events = await pb.collection('events').getList<Event>(1, 3, {
@@ -10,6 +8,6 @@ export const load: PageServerLoad = async ({ params }) => {
 	});
 
 	return {
-		events: events
+		events: events.items
 	};
 };

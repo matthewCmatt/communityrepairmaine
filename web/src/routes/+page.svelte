@@ -2,6 +2,7 @@
 	import type { PageProps } from './$types';
 	let { data }: PageProps = $props();
 	import Meta from '$lib/components/meta.svelte';
+	import EventCard from '$lib/components/EventCard.svelte';
 </script>
 
 <Meta title="Home" description="Home" />
@@ -16,20 +17,29 @@
 		<h3>Find a Repair Event near you</h3>
 		<br />
 		<ul>
-			{#each data.events.items as event}
-				<li>
-					<a href={`/events/${event.id}`} class="button">{event.name}</a>
-				</li>
+			{#each data.events as event}
+				<EventCard {event} />
 			{/each}
 
 			<a href="/events" class="button">All Events</a>
 		</ul>
 	</div>
-	<div>
-		<h3>Host a new meetup</h3>
-		<a href="/organizers/register" class="button">Register</a>
+
+	<hr/>
+
+	<div class="side-by-side">
+		<div>
+			<h3>Host a new meetup</h3>
+			<a href="/organizers/register" class="button">Register</a>
+		</div>
+		<div>
+			<h3>Volunteer at a meetup</h3>
+			<a href="/volunteer" class="button">Volunteer</a>
+		</div>
 	</div>
 </section>
+
+<hr/>
 
 <section>
 	<h3>About</h3>
@@ -52,3 +62,14 @@
 
 	<a href="/about" class="button">Read more about this site</a>
 </section>
+
+<style>
+    @media (min-width: 600px) {
+       	.side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+
+</style>

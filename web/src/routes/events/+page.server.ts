@@ -7,7 +7,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 	// let events = ['event1', 'event2'];
 	let page = parseInt(url.searchParams.get('page') ?? '1');
 
-	let events = await pb.collection('events').getList(page, 10);
+	let events = await pb.collection('events').getList<Event>(page, 10);
 
 	if (events.items.length == 0) {
 		error(404, {
@@ -22,7 +22,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 	if (page < total - 1) nextPage = page + 1;
 
 	return {
-		events: events.items as unknown as Event[],
+		events: events.items,
 		nextPage: nextPage,
 		prevPage: prevPage
 	};

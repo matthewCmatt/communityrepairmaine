@@ -1,6 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { pb } from '$lib/pb.server';
+import type { Event } from '$lib/types';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	// let events = ['event1', 'event2'];
@@ -21,7 +22,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 	if (page < total - 1) nextPage = page + 1;
 
 	return {
-		events: events,
+		events: events.items as unknown as Event[],
 		nextPage: nextPage,
 		prevPage: prevPage
 	};

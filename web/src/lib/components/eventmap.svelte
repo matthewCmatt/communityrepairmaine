@@ -2,6 +2,9 @@
 	import { onMount, onDestroy } from 'svelte';
 	import maplibregl from 'maplibre-gl';
 	import 'maplibre-gl/dist/maplibre-gl.css';
+	import type { Event } from '$lib/types';
+
+	let { events }: { events: Event[] } = $props();
 
 	let map: maplibregl.Map;
 	let mapContainer: HTMLDivElement;
@@ -9,9 +12,41 @@
 	onMount(() => {
 		map = new maplibregl.Map({
 			container: mapContainer,
-			style: `https://demotiles.maplibre.org/globe.json`,
+			style: 'https://tiles.openfreemap.org/styles/liberty',
 			center: [-69.2428, 45.3695],
 			zoom: 6
+		});
+
+		map.on('load', () => {
+			map.addSource('events', {
+				type: 'geojson',
+				data: {
+					type: 'FeatureCollection',
+					features: events.map((event) => ({
+						type: 'Feature',
+						geometry: {
+							type: 'Point',
+							coordinates: [event.geolocation?.lon, event.geolocation?.lat]
+						},
+						properties: {
+							id: event.id,
+							title: event.name
+						}
+					}))
+				}
+			});
+
+			map.addLayer({
+				id: 'event-points',
+				type: 'circle',
+				source: 'events',
+				paint: {
+					'circle-radius': 7,
+					'circle-color': '#e85d04',
+					'circle-stroke-color': '#fff',
+					'circle-stroke-width': 2
+				}
+			});
 		});
 	});
 

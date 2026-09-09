@@ -16,7 +16,7 @@
 <br />
 
 <ol>
-	{#each data.events.items as event}
+	{#each data.events as event}
 		<li>
 			<a href={`/events/${event.id}`} class="button">
 				{event.name}
@@ -25,6 +25,6 @@
 	{/each}
 </ol>
 
-<!-- <hr />
+<hr />
 
-    <EventMap></EventMap> -->
+<EventMap events={data.events}></EventMap>

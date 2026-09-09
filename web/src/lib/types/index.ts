@@ -2,6 +2,8 @@
    Shared
 ========================= */
 
+import type { RecordModel } from "pocketbase";
+
 export interface BaseRecord {
 	id: string;
 	created: string; // ISO timestamp
@@ -38,7 +40,7 @@ export interface Organizer extends BaseRecord {
    Events
 ========================= */
 
-export interface Event extends BaseRecord {
+export interface Event extends RecordModel {
 	name?: string;
 	start_time?: string; // ISO date
 	end_time?: string; // ISO date
@@ -46,7 +48,8 @@ export interface Event extends BaseRecord {
 	location?: string;
 	external_links?: string;
 
-	organizer?: string; // relation → Organizer.id
+  organizer?: string; // relation → Organizer.id
+  geolocation?: { lat: number, lon: number }
 }
 
 /* =========================

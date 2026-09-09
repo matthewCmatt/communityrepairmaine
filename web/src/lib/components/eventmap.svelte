@@ -67,5 +67,6 @@
 	div {
 		width: 100%;
 		aspect-ratio: 0.7;
+
 	}
 </style>

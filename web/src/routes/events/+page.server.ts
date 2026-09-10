@@ -4,10 +4,11 @@ import { pb } from '$lib/pb.server';
 import type { Event } from '$lib/types';
 
 export const load: PageServerLoad = async ({ params, url }) => {
-	// let events = ['event1', 'event2'];
 	let page = parseInt(url.searchParams.get('page') ?? '1');
 
-	let events = await pb.collection('events').getList<Event>(page, 10);
+	let events = await pb
+		.collection('events')
+		.getList<Event>(page, 10, { filter: 'published = true' });
 
 	if (events.items.length == 0) {
 		error(404, {

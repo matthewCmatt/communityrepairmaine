@@ -26,15 +26,33 @@
 
 <style>
 	ul {
-		display: flex;
+		display: grid;
 		flex-direction: column;
 		overflow: hidden;
 		width: 100%;
+		font-size: 1.2em;
+		text-align: center;
 
 		position: absolute;
 		background-color: var(--color-bg-header-2);
-		padding: 1ch;
+		padding: 2ch;
+		gap: 1ch;
 		transition: height 0.2s ease;
 		transition: background-color 0.2s ease;
+		color: inherit;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			transition: color 0.1s ease;
+
+			&:visited {
+				color: inherit;
+			}
+
+			&:hover {
+				color: var(--color-accent);
+			}
+		}
 	}
 </style>

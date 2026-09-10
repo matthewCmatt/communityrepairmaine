@@ -1,16 +1,16 @@
 :root {
-	color-scheme: dark;
-	--color-bg: #080a0d;
-	--color-bg-header: #293241;
-	--color-bg-header-2: #181d26;
-	--color-text: #f0f0f0;
-	--color-accent: #ee6c4d;
-	--color-secondary: #70877f;
+	--color-bg: #EFBCA9;
+	--color-bg-header: #EFBCA9;
+	--color-bg-header-2: #e6d6d7;
+	--color-accent: #823038;
+	--color-secondary: #823038;
 
 	font-family: 'vladivostok';
 }
 
 body {
+    color-scheme: light;
+    --color-text: light-dark(#060a15, #e6e7e8);
 	background-color: var(--color-bg);
 	color: var(--color-text);
 }
@@ -22,14 +22,13 @@ body {
 
 .button {
 	display: inline-block;
-	padding: 0.5em;
+	padding: 0.8em;
 	border-radius: 1em;
 	margin: 0.2em;
+	color-scheme: dark;
+	color: var(--color-text);
 	background-color: var(--color-secondary);
-
-	&a {
-		color: inherit;
-	}
+	text-decoration: inherit;
 }
 
 section {
@@ -51,11 +50,4 @@ h4 {
 	font-size: 1.2em;
 	margin-bottom: 0.4em;
 	margin-top: 0.8em;
-}
-
-a,
-a:visited,
-a:hover,
-a:active {
-	color: inherit;
 }

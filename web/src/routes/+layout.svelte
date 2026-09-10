@@ -50,7 +50,6 @@
 		display: flex;
 		justify-content: space-between;
 		background-color: var(--color-bg-header);
-		color: light-dark(#f0f0f0, #f0f0f0);
 
 		font-size: 1.4rem;
 
@@ -93,9 +92,13 @@
 	}
 
 	@media (max-width: 768px) {
-		/* Styles for tablets and larger */
+		/* Styles for phones */
 		.wide {
 			display: none;
+		}
+
+		main {
+		    padding: 1rem;
 		}
 	}
 

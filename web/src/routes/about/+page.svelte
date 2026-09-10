@@ -9,9 +9,16 @@
 	hosting community Repair Cafe events.
 </p>
 
-<p>Find more about Repair Cafes.</p>
+<br/>
+
+<p><a href="/about/repair-cafe">Find more about Repair Cafes.
+</a></p>
+
+<br/>
 
 <p>We meet roughly quarterly to discuss how our events are going</p>
+
+<br/>
 
 <p>
 	The source code for this website is <a

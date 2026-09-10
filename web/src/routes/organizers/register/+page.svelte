@@ -7,7 +7,7 @@
 <Meta title="Register" description="Register as an organizer" />
 
 <hgroup>
-	<h2>Register as an organizer</h2>
+	<h2>Already an organizer? Register here!</h2>
 	<p>
 		Provide your information below and you can submit it for approval to be included in this site!
 	</p>
@@ -16,11 +16,11 @@
 <form method="POST">
 	<label>
 		Name
-		<input name="name" type="text" />
+		<input name="name" type="text" required/>
 	</label>
 	<label>
 		Email
-		<input name="email" type="email" />
+		<input name="email" type="email" required/>
 	</label>
 	<button class="button">Register</button>
 
@@ -32,3 +32,22 @@
 		There was an issue submitting your page information. Try again or email us!
 	{/if}
 </form>
+
+<br/>
+
+<h2>Want to start a Repair Cafe?</h2>
+
+<p>Aside from registering above, here are some helpful resources for starting a repair cafe in your community.</p>
+
+<a href="https://www.maine.gov/dep/waste/recycle/documents/starting-a-repair-clinic.pdf">A guide from Maine Department of Environmental Protection</a>
+
+<h4>Printables/pamphlets/flyers</h4>
+<ul>
+    <li>
+        <a href="https://makeityourown.carrd.co/">A zine with information on clothing mending</a>
+    </li>
+
+    <li>
+        <a href="https://www.maine.gov/dep/waste/recycle/documents/starting-a-repair-clinic.pdf">A zine</a>
+    </li>
+</ul>

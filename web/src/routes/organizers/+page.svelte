@@ -16,7 +16,7 @@
 <ul>
 	{#each data.organizers.items as org}
 		<li>
-			<a href={`/organizers/${org.id}`} class="button">
+			<a href={`/organizers/${org.slug}`} class="button">
 				{org.name}
 			</a>
 		</li>

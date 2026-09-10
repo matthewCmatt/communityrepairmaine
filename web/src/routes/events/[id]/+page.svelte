@@ -22,7 +22,7 @@
 {times.startTime} to {times.endTime}<br />
 
 {#if data.organizer}
-    <Button.Root href={`/organizers/${data.organizer.id}`} class="button"
+    <Button.Root href={`/organizers/${data.organizer.slug}`} class="button"
 	>{data.organizer.name}</Button.Root
     >
 {/if}

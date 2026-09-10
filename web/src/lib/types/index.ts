@@ -16,6 +16,8 @@ export interface Organizer extends RecordModel {
 	name?: string;
 	website?: string;
 	email?: string;
+	slug?: string;
+	town?: string;
 }
 
 export interface Event extends RecordModel {

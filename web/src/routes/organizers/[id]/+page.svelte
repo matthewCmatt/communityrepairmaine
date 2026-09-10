@@ -2,6 +2,7 @@
 	import { Button } from 'bits-ui';
 	import type { PageProps } from './$types';
 	import Meta from '$lib/components/meta.svelte';
+	import EventCard from '$lib/components/EventCard.svelte';
 	let { data }: PageProps = $props();
 </script>
 
@@ -18,13 +19,24 @@
 {/if}
 
 <h3>Events</h3>
-<ol>
-    {#if Array.isArray(data.events) && data.events.length < 1}
-        This organizer doesn't have any events yet.
-    {/if}
+<ol class="events">
+	{#if Array.isArray(data.events) && data.events.length < 1}
+		This organizer doesn't have any events yet.
+	{/if}
 	{#each data.events as event}
 		<li>
-			<Button.Root href={`/events/${event.id}`} class="button">{event.name}</Button.Root>
+			<EventCard {event} />
 		</li>
 	{/each}
 </ol>
+
+<style>
+	.events {
+		display: grid;
+
+		li {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+</style>

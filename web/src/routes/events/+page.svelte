@@ -16,12 +16,25 @@
 
 <br />
 
-<ol>
+<ol class="events">
 	{#each data.events as event}
-		<EventCard {event} />
+		<li>
+			<EventCard {event} />
+		</li>
 	{/each}
 </ol>
 
-<br/>
+<br />
 
 <EventMap events={data.events}></EventMap>
+
+<style>
+	.events {
+		display: grid;
+
+		li {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+</style>

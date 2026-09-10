@@ -16,9 +16,11 @@
 	<div>
 		<h3>Find a Repair Event near you</h3>
 		<br />
-		<ul>
+		<ul class="events">
 			{#each data.events as event}
-				<EventCard {event} />
+				<li>
+					<EventCard {event} />
+				</li>
 			{/each}
 
 			<a href="/events" class="button">All Events</a>
@@ -68,6 +70,15 @@
 		.side-by-side {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.events {
+		display: grid;
+
+		li {
+		    display: flex;
+						flex-direction: column;
 		}
 	}
 </style>

@@ -22,9 +22,8 @@
 					<EventCard {event} />
 				</li>
 			{/each}
-
-			<a href="/events" class="button">All Events</a>
 		</ul>
+		<a href="/events" class="button">All Events</a>
 	</div>
 
 	<hr />

@@ -22,6 +22,6 @@
 	{/each}
 </ol>
 
-<hr />
+<br/>
 
 <EventMap events={data.events}></EventMap>

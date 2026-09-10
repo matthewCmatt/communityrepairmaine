@@ -61,12 +61,17 @@
 	});
 </script>
 
-<div bind:this={mapContainer}></div>
+<div class="map" bind:this={mapContainer}></div>
 
 <style>
-	div {
+	.map {
 		width: 100%;
 		aspect-ratio: 0.7;
+		border-radius: 10px;
+	}
 
+	.map :global(.maplibregl-canvas-container),
+	.map :global(.maplibregl-canvas) {
+		border-radius: 10px;
 	}
 </style>

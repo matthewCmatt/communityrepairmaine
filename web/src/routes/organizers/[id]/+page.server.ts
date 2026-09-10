@@ -8,7 +8,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	let events;
 	try {
 		events = await pb.collection('events').getFullList<Event>({
-			filter: `published = true && organizer = "${organizer.id}"`
+			filter: `published = true && organizer ~ "${organizer.id}"`
 		});
 	} catch (err) {
 		console.log(err);

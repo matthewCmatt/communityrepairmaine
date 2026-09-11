@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import maplibregl from 'maplibre-gl';
+	import maplibregl, { type GeoJSONSource } from 'maplibre-gl';
 	import pkg from 'maplibre-gl';
 	const { LngLat, LngLatBounds } = pkg;
 	import 'maplibre-gl/dist/maplibre-gl.css';
@@ -48,11 +48,21 @@
 				source: 'events',
 				paint: {
 					'circle-radius': 7,
-					'circle-color': '#e85d04',
+					'circle-color': '#823038',
 					'circle-stroke-color': '#fff',
 					'circle-stroke-width': 2
 				}
 			});
+		});
+
+		map.on('sourcedata', async (e) => {
+			if (e.sourceId !== 'events' || !map.getSource('events')?.loaded()) {
+				return;
+			}
+
+			const source = map.getSource<GeoJSONSource>('events');
+			const bounds = (await source?.getBounds()) || new maplibregl.LngLatBounds();
+			map.fitBounds(bounds, { padding: 100 });
 		});
 	});
 

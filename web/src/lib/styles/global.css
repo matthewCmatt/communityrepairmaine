@@ -30,6 +30,7 @@ body {
 	color: var(--color-text);
 	background-color: var(--color-secondary);
 	text-decoration: inherit;
+	border: none;
 }
 
 section {

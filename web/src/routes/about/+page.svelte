@@ -4,6 +4,8 @@
 
 <Meta title="About" description="About Community Repair Maine" />
 
+<h2>About the Maine Community Repair Network</h2>
+
 <p>
 	The Maine Community Repair Network is a group of organizers across the state that collaborate on
 	hosting community Repair Cafe events.

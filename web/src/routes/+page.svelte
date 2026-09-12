@@ -5,7 +5,7 @@
 	import EventCard from '$lib/components/EventCard.svelte';
 </script>
 
-<Meta title="Home" description="Home" />
+<Meta description="Home" />
 
 <svelte:head>
 	<title>Community Repair Maine</title>

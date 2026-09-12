@@ -1,8 +1,12 @@
 <script lang="ts">
-	let { title, description } = $props();
+	let { title, description }: { title?: string; description: string } = $props();
 </script>
 
 <svelte:head>
-	<title>{title} - Community Repair Maine</title>
+	{#if title}
+		<title>{title} - Community Repair Maine</title>
+	{:else}
+		<title>Community Repair Maine</title>
+	{/if}
 	<meta name="description" content={description} />
 </svelte:head>

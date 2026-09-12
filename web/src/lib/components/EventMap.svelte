@@ -77,7 +77,7 @@
 <style>
 	.map {
 		width: 100%;
-		aspect-ratio: 0.7;
+		aspect-ratio: 0.6885;
 		border-radius: 10px;
 	}
 

@@ -21,6 +21,9 @@ FROM node:24-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
+RUN apk add --no-cache tzdata
+ENV TZ=America/New_York
+
 RUN corepack enable
 
 COPY --from=builder /app/web/package.json ./

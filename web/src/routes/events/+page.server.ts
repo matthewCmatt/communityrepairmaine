@@ -6,9 +6,10 @@ import type { Event } from '$lib/types';
 export const load: PageServerLoad = async ({ params, url }) => {
 	let page = parseInt(url.searchParams.get('page') ?? '1');
 
-	let events = await pb
-		.collection('events')
-		.getList<Event>(page, 10, { filter: 'published = true' });
+	let events = await pb.collection('events').getList<Event>(page, 10, {
+		filter: 'published = true && end_time > @now',
+		sort: '+start_time'
+	});
 
 	if (events.items.length == 0) {
 		error(404, {

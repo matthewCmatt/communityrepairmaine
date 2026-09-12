@@ -11,19 +11,6 @@
 
 <br/>
 
-<p><a href="/about/repair-cafes">Find more about Repair Cafes.
-</a></p>
-
-<br/>
-
 <p>We meet roughly quarterly to discuss how our events are going</p>
 
 <br/>
-
-<p>
-	The source code for this website is <a
-		href="https://github.com/matthewCmatt/communityrepairmaine"
-	>
-		available on GitHub
-	</a>.
-</p>

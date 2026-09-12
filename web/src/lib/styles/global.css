@@ -5,7 +5,7 @@
 	--color-accent: #823038;
 	--color-secondary: #823038;
 
-	font-family: 'vladivostok';
+	font-family: 'vladivostok', sans-serif;
 	font-display: swap;
 }
 
@@ -24,8 +24,8 @@ body {
 .button {
 	display: inline-block;
 	padding: 0.8em;
-	border-radius: 1em;
-	margin: 0.2em;
+	border-radius: 1rem;
+	margin: 0.2em 0;
 	color-scheme: dark;
 	color: var(--color-text);
 	background-color: var(--color-secondary);
@@ -51,4 +51,11 @@ h4 {
 	font-size: 1.2em;
 	margin-bottom: 0.4em;
 	margin-top: 0.8em;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    border-radius: 1px;
+    background-color: var(--color-text);
 }

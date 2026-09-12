@@ -74,11 +74,11 @@
 	.map {
 		width: 100%;
 		aspect-ratio: 0.6885;
-		border-radius: 10px;
+		border-radius: 1rem;
 	}
 
 	.map :global(.maplibregl-canvas-container),
 	.map :global(.maplibregl-canvas) {
-		border-radius: 10px;
+		border-radius: 1rem;
 	}
 </style>

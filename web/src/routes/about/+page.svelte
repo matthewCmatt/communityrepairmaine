@@ -11,7 +11,7 @@
 
 <br/>
 
-<p><a href="/about/repair-cafe">Find more about Repair Cafes.
+<p><a href="/about/repair-cafes">Find more about Repair Cafes.
 </a></p>
 
 <br/>

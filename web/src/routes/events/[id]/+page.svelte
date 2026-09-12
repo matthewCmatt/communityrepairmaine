@@ -21,9 +21,11 @@
 
 {times.startTime} to {times.endTime}<br />
 
-{#if data.organizer}
+{#if data.organizers}
     <h3>Event Organizer</h3>
-    <Button.Root href={`/organizers/${data.organizer.slug}`} class="button"
-	>{data.organizer.name}</Button.Root
-    >
+    {#each data.organizers as organizer}
+        <Button.Root href={`/organizers/${organizer.slug}`} class="button"
+        >{organizer.name}</Button.Root
+        >
+    {/each}
 {/if}

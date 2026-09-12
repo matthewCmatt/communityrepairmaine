@@ -27,8 +27,7 @@ export interface Event extends RecordModel {
 	description?: string;
 	location?: string;
 	external_links?: string;
-
-	organizer?: string; // relation → Organizer.id
+	organizers?: string[]; // relation → Organizer.id
 	geolocation?: { lat: number; lon: number };
 }
 
@@ -52,7 +51,7 @@ export interface Venue extends RecordModel {
 
 export interface EventExpanded extends Event {
 	expand?: {
-		organizer?: Organizer;
+		organizers?: Organizer[];
 	};
 }
 

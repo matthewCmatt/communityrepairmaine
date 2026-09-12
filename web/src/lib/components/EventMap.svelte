@@ -54,16 +54,12 @@
 					'circle-stroke-width': 2
 				}
 			});
-		});
-
-		map.on('sourcedata', async (e) => {
-			if (e.sourceId !== 'events' || !map.getSource('events')?.loaded()) {
-				return;
-			}
 
 			const source = map.getSource<maplibregl.GeoJSONSource>('events');
-			const bounds = (await source?.getBounds()) || new maplibregl.LngLatBounds();
-			map.fitBounds(bounds, { padding: 100 });
+			source?.getBounds().then((bounds) => {
+			  map.fitBounds(bounds, { padding: 100 });
+			});
+
 		});
 	});
 

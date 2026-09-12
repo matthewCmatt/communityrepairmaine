@@ -1,0 +1,89 @@
+<script lang="ts">
+    import { Menu } from 'lucide-svelte';
+	import NavMenu from '$lib/components/navmenu.svelte';
+	import { afterNavigate } from '$app/navigation';
+
+	let menuOpen = $state(false);
+	afterNavigate(() => {
+		menuOpen = false;
+	});
+</script>
+
+
+<nav>
+	<a href="/"><h1>Community Repair Maine</h1></a>
+	<ul class="wide">
+		<li>
+			<a href="/events">Events</a>
+		</li>
+		<li>
+			<a href="/organizers">Organizers</a>
+		</li>
+		<li>
+			<a href="/about">About</a>
+		</li>
+	</ul>
+	<button class="narrow" title="Toggle navigation menu" onclick={() => (menuOpen = !menuOpen)}>
+		<Menu strokeWidth="3" />
+	</button>
+</nav>
+<NavMenu bind:open={menuOpen} />
+
+<style>
+
+    nav {
+		padding: 2rem 2.2rem;
+		align-items: center;
+
+		display: flex;
+		justify-content: space-between;
+		background-color: var(--color-bg-header);
+
+		font-size: 1.4rem;
+
+		ul {
+			display: flex;
+			gap: 2rem;
+			font-size: 1rem;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		transition: color 0.1s ease;
+
+		&:visited {
+			color: inherit;
+		}
+
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+
+	button {
+		background: none;
+		color: inherit;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+		outline: inherit;
+		display: flex;
+	}
+
+	@media (max-width: 768px) {
+		/* Styles for phones */
+		.wide {
+			display: none;
+		}
+	}
+
+	@media (min-width: 769px) {
+		/* Styles for tablets and larger */
+		.narrow {
+			display: none;
+		}
+	}
+</style>

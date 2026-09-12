@@ -4,6 +4,9 @@
 	import 'maplibre-gl/dist/maplibre-gl.css';
 	import type { Event } from '$lib/types';
 
+	import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
+	maplibregl.setWorkerUrl(workerUrl);
+
 	let { events }: { events: Event[] } = $props();
 
 	let map: maplibregl.Map;

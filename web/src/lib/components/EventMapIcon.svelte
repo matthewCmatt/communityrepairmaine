@@ -8,8 +8,8 @@
 <style>
 	a {
 	    display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: 40px;
+		height: 40px;
 		background-color: #823038; /* Svelte orange */
 		border: 2px solid #fff;
 		border-radius: 50% 50% 50% 0;

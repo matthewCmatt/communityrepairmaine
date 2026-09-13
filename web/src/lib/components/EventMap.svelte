@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount, onDestroy, mount, unmount } from 'svelte';
 	import * as maplibregl from 'maplibre-gl';
 	import 'maplibre-gl/dist/maplibre-gl.css';
 	import type { Event } from '$lib/types';
+	import EventMapIcon from '$lib/components/EventMapIcon.svelte';
 
 	import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 	maplibregl.setWorkerUrl(workerUrl);
@@ -11,6 +12,8 @@
 
 	let map: maplibregl.Map;
 	let mapContainer: HTMLDivElement;
+	let mountedInstances: ReturnType<typeof mount>[] = [];
+	let mapMarkers: maplibregl.Marker[] = [];
 
 	onMount(() => {
 		map = new maplibregl.Map({
@@ -24,46 +27,36 @@
 			)
 		});
 
-		map.on('load', () => {
-			map.addSource('events', {
-				type: 'geojson',
-				data: {
-					type: 'FeatureCollection',
-					features: events.map((event) => ({
-						type: 'Feature',
-						geometry: {
-							type: 'Point',
-							coordinates: [event.geolocation?.lon, event.geolocation?.lat]
-						},
-						properties: {
-							id: event.id,
-							title: event.name
-						}
-					}))
-				}
-			});
+		map.once('load', () => {
+			const bounds = new maplibregl.LngLatBounds();
+			events.forEach((event) => {
+				if (!event.geolocation) return;
 
-			map.addLayer({
-				id: 'event-points',
-				type: 'circle',
-				source: 'events',
-				paint: {
-					'circle-radius': 7,
-					'circle-color': '#823038',
-					'circle-stroke-color': '#fff',
-					'circle-stroke-width': 2
-				}
-			});
+				const el = document.createElement('div');
 
-			const source = map.getSource<maplibregl.GeoJSONSource>('events');
-			source?.getBounds().then((bounds) => {
-			  map.fitBounds(bounds, { padding: 100 });
-			});
+				const instance = mount(EventMapIcon, {
+					target: el,
+					props: { event: event }
+				});
+				mountedInstances.push(instance);
 
+				const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+					.setLngLat(new maplibregl.LngLat(event.geolocation.lon, event.geolocation.lat))
+					.addTo(map);
+
+				mapMarkers.push(marker);
+
+				bounds.extend(new maplibregl.LngLat(event.geolocation.lon, event.geolocation.lat));
+			});
+			map.fitBounds(bounds, {
+				padding: 100
+			});
 		});
 	});
 
 	onDestroy(() => {
+		mountedInstances.forEach((instance) => unmount(instance));
+		mapMarkers.forEach((marker) => marker.remove());
 		map?.remove();
 	});
 </script>

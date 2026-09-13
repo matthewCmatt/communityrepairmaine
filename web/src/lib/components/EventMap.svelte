@@ -49,7 +49,8 @@
 				bounds.extend(new maplibregl.LngLat(event.geolocation.lon, event.geolocation.lat));
 			});
 			map.fitBounds(bounds, {
-				padding: 100
+				padding: 100,
+				duration: 0
 			});
 		});
 	});

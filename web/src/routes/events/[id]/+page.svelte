@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
 	import { parseEventLocal } from '$lib/datetime';
-	import { Button } from 'bits-ui';
 	import Meta from '$lib/components/meta.svelte';
 
 	let { data }: PageProps = $props();
@@ -21,11 +20,11 @@
 
 {times.startTime} to {times.endTime}<br />
 
+<a href={data.event.external_links} class="button">External Link</a>
+
 {#if data.organizers}
     <h3>Event Organizer</h3>
     {#each data.organizers as organizer}
-        <Button.Root href={`/organizers/${organizer.slug}`} class="button"
-        >{organizer.name}</Button.Root
-        >
+        <a href={`/organizers/${organizer.slug}`} class="button">{organizer.name}</a>
     {/each}
 {/if}

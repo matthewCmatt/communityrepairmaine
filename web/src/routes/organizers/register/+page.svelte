@@ -49,12 +49,6 @@
 	<li>
 		<a href="https://makeityourown.carrd.co/">A zine with information on clothing mending</a>
 	</li>
-
-	<li>
-		<a href="https://www.maine.gov/dep/waste/recycle/documents/starting-a-repair-clinic.pdf"
-			>A zine</a
-		>
-	</li>
 </ul>
 
 <style>

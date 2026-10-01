@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { pb } from '$lib/pb.server';
-import type { Event } from '$lib/types';
+import { pb } from '#lib/pb.server.js';
+import type { Event } from '#lib/types/index.js';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	let page = parseInt(url.searchParams.get('page') ?? '1');
@@ -12,9 +12,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 	});
 
 	if (events.items.length == 0) {
-		error(404, {
-			message: 'Page not found'
-		});
+		error(404, 'Page not found');
 	}
 
 	let total = events.totalPages;

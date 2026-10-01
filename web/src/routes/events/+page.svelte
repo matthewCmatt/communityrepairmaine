@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
-	import Meta from '$lib/components/meta.svelte';
-	import EventMap from '$lib/components/EventMap.svelte';
-	import EventCard from '$lib/components/EventCard.svelte';
+	import Meta from '#lib/components/meta.svelte';
+	import EventMap from '#lib/components/EventMap.svelte';
+	import EventCard from '#lib/components/EventCard.svelte';
 
 	let { data }: PageProps = $props();
 </script>

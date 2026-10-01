@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
-	import { parseEventLocal } from '$lib/datetime';
-	import Meta from '$lib/components/meta.svelte';
+	import { parseEventLocal } from '#lib/datetime.js';
+	import Meta from '#lib/components/meta.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -23,8 +23,8 @@
 <a href={data.event.external_links} class="button">External Link</a>
 
 {#if data.organizers}
-    <h3>Event Organizer</h3>
-    {#each data.organizers as organizer}
-        <a href={`/organizers/${organizer.slug}`} class="button">{organizer.name}</a>
-    {/each}
+	<h3>Event Organizer</h3>
+	{#each data.organizers as organizer}
+		<a href={`/organizers/${organizer.slug}`} class="button">{organizer.name}</a>
+	{/each}
 {/if}

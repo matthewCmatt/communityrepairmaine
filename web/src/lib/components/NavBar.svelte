@@ -1,14 +1,16 @@
 <script lang="ts">
-    import { Menu } from 'lucide-svelte';
-	import NavMenu from '$lib/components/navmenu.svelte';
+	import { Menu } from 'lucide-svelte';
+	import NavMenu from '#lib/components/navmenu.svelte';
 	import { afterNavigate } from '$app/navigation';
 
 	let menuOpen = $state(false);
-	afterNavigate(() => {
+
+	afterNavigate(({ shallow }) => {
+		if (shallow) return;
+
 		menuOpen = false;
 	});
 </script>
-
 
 <nav>
 	<a href="/"><h1>Community Repair Maine</h1></a>
@@ -23,15 +25,15 @@
 			<a href="/about">About</a>
 		</li>
 	</ul>
-	<button class="narrow" title="Toggle navigation menu" onclick={() => (menuOpen = !menuOpen)}>
-		<Menu strokeWidth="3" />
-	</button>
+
+	<button class="narrow" title="Toggle navigation menu" onclick={() => (menuOpen = !menuOpen)}
+		><Menu strokeWidth="3" /></button
+	>
 </nav>
 <NavMenu bind:open={menuOpen} />
 
 <style>
-
-    nav {
+	nav {
 		padding: 2rem 2.2rem;
 		align-items: center;
 

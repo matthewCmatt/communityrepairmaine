@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Event } from '$lib/types';
+	import type { Event } from '#lib/types/index.js';
 	let { event }: { event: Event } = $props();
 </script>
 
@@ -7,7 +7,7 @@
 
 <style>
 	a {
-	    display: inline-block;
+		display: inline-block;
 		width: 30px;
 		height: 30px;
 		background-color: #823038; /* Svelte orange */

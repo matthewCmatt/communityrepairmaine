@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Button } from 'bits-ui';
 	import type { PageProps } from './$types';
-	import Meta from '$lib/components/meta.svelte';
-	import EventCard from '$lib/components/EventCard.svelte';
+	import Meta from '#lib/components/meta.svelte';
+	import EventCard from '#lib/components/EventCard.svelte';
 	let { data }: PageProps = $props();
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Meta from '$lib/components/meta.svelte';
+	import Meta from '#lib/components/meta.svelte';
 </script>
 
 <Meta title="About" description="About Community Repair Maine" />
@@ -11,8 +11,8 @@
 	hosting community Repair Cafe events.
 </p>
 
-<br/>
+<br />
 
 <p>We meet roughly quarterly to discuss how our events are going</p>
 
-<br/>
+<br />

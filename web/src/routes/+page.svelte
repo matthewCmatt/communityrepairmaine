@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
 	let { data }: PageProps = $props();
-	import Meta from '$lib/components/meta.svelte';
-	import EventCard from '$lib/components/EventCard.svelte';
+	import Meta from '#lib/components/meta.svelte';
+	import EventCard from '#lib/components/EventCard.svelte';
 </script>
 
 <Meta description="Home" />
@@ -76,8 +76,8 @@
 		display: grid;
 
 		li {
-		    display: flex;
-						flex-direction: column;
+			display: flex;
+			flex-direction: column;
 		}
 	}
 </style>

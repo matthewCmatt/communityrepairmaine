@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
-import { pb } from '$lib/pb.server';
-import type { Event } from '$lib/types';
+import { pb } from '#lib/pb.server.js';
+import type { Event } from '#lib/types/index.js';
 
 export const load: PageServerLoad = async ({ params }) => {
 	let events = await pb.collection('events').getList<Event>(1, 3, {

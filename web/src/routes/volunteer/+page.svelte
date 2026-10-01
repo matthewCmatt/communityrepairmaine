@@ -1,7 +1,7 @@
 <script>
-	import Meta from "$lib/components/meta.svelte";
-
+	import Meta from '#lib/components/meta.svelte';
 </script>
+
 <Meta title="Volunteer" description="Volunteer for a repair cafe" />
 
 Repair Cafes are largely volunteer-run. If you're interested in volunteering, you can find a meetup

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
-	import '$lib/styles/reset.css';
-	import '$lib/styles/fonts.css';
-	import '$lib/styles/global.css';
-	import NavBar from '$lib/components/NavBar.svelte';
+	import favicon from '#lib/assets/favicon.svg';
+	import '#lib/styles/reset.css';
+	import '#lib/styles/fonts.css';
+	import '#lib/styles/global.css';
+	import NavBar from '#lib/components/NavBar.svelte';
 	let { children } = $props();
 </script>
 
@@ -26,7 +26,7 @@
 
 	@media (max-width: 768px) {
 		main {
-		    padding: 1rem;
+			padding: 1rem;
 		}
 	}
 </style>

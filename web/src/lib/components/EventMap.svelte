@@ -2,8 +2,8 @@
 	import { onMount, onDestroy, mount, unmount } from 'svelte';
 	import * as maplibregl from 'maplibre-gl';
 	import 'maplibre-gl/dist/maplibre-gl.css';
-	import type { Event } from '$lib/types';
-	import EventMapIcon from '$lib/components/EventMapIcon.svelte';
+	import type { Event } from '#lib/types/index.js';
+	import EventMapIcon from '#lib/components/EventMapIcon.svelte';
 
 	import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 	maplibregl.setWorkerUrl(workerUrl);

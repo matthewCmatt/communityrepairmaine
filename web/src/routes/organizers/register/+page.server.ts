@@ -1,5 +1,5 @@
 import type { Actions } from './$types';
-import { pb } from '$lib/pb.server';
+import { pb } from '#lib/pb.server.js';
 
 export const actions = {
 	default: async (event) => {

@@ -1,6 +1,6 @@
 :root {
-	--color-bg: #EFBCA9;
-	--color-bg-header: #EFBCA9;
+	--color-bg: #efbca9;
+	--color-bg-header: #efbca9;
 	--color-bg-header-2: #e6d6d7;
 	--color-accent: #823038;
 	--color-secondary: #823038;
@@ -9,8 +9,8 @@
 }
 
 body {
-    color-scheme: light;
-    --color-text: light-dark(#060a15, #e6e7e8);
+	color-scheme: light;
+	--color-text: light-dark(#060a15, #e6e7e8);
 	background-color: var(--color-bg);
 	color: var(--color-text);
 }
@@ -54,8 +54,8 @@ h4 {
 }
 
 hr {
-    border: none;
-    height: 2px;
-    border-radius: 1px;
-    background-color: var(--color-text);
+	border: none;
+	height: 2px;
+	border-radius: 1px;
+	background-color: var(--color-text);
 }

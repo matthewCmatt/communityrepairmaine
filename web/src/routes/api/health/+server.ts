@@ -2,12 +2,11 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async () => {
-	return json(
-		{
+  return Response.json(
+    {
 			status: 'ok',
 			timestamp: new Date().toISOString(),
 			message: 'SvelteKit is healthy'
 		},
-		{ status: 200 }
-	);
+		{ status: 200 })
 };

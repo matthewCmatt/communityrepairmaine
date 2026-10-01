@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { parseEventLocal } from '$lib/datetime';
-	import type { Event } from '$lib/types';
+	import { parseEventLocal } from '#lib/datetime.js';
+	import type { Event } from '#lib/types/index.js';
 
 	let { event }: { event: Event } = $props();
 
@@ -22,6 +22,6 @@
 	}
 
 	a {
-        text-decoration: inherit;
+		text-decoration: inherit;
 	}
 </style>

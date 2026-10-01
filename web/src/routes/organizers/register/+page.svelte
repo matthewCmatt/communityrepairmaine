@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData, ActionData } from './$types';
-	import Meta from '$lib/components/meta.svelte';
+	import Meta from '#lib/components/meta.svelte';
 	let { data, form }: { data: PageData; form: ActionData } = $props();
 </script>
 
@@ -16,9 +16,7 @@
 <form method="POST">
 	<label for="name"> Name </label>
 	<input name="name" type="text" required />
-	<label for="email">
-		Email
-	</label>
+	<label for="email"> Email </label>
 	<input name="email" type="email" required />
 	<button class="button">Register</button>
 

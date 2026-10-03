@@ -19,11 +19,11 @@ export interface Event extends RecordModel {
 }
 
 export interface Venue extends RecordModel {
-	name?: string;
-	street_address_1?: string;
+	name: string;
+	street_address_1: string;
 	street_address_2?: string;
-	town?: string;
-	state?: string;
+	town: string;
+	state: string;
 	zip_code?: string;
 	notes?: string;
 	geopoint?: {

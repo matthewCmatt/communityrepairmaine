@@ -2,13 +2,16 @@
 	import { onMount, onDestroy, mount, unmount } from 'svelte';
 	import * as maplibregl from 'maplibre-gl';
 	import 'maplibre-gl/dist/maplibre-gl.css';
-	import type { Event } from '#lib/types/index.js';
+	import type { Event, Venue } from '#lib/types/index.js';
 	import EventMapIcon from '#lib/components/EventMapIcon.svelte';
 
 	import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 	maplibregl.setWorkerUrl(workerUrl);
 
 	let { events }: { events: Event[] } = $props();
+
+	let seenVenues = new Set<string>();
+	let venues = new Set<Venue>();
 
 	let map: maplibregl.Map;
 	let mapContainer: HTMLDivElement;
@@ -29,6 +32,19 @@
 
 		map.once('load', () => {
 			const bounds = new maplibregl.LngLatBounds();
+
+			events = events.filter((e) => {
+				if (e.venue == undefined) {
+					return false;
+				}
+
+				if (seenVenues.has(e.venue)) {
+					return false;
+				}
+
+				seenVenues.add(e.venue);
+				return true;
+			});
 			events.forEach((event) => {
 				if (!event.geolocation) return;
 
@@ -40,13 +56,15 @@
 				});
 				mountedInstances.push(instance);
 
+				let geolocation = event.expand?.venue.geopoint;
+
 				const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
-					.setLngLat(new maplibregl.LngLat(event.geolocation.lon, event.geolocation.lat))
+					.setLngLat(new maplibregl.LngLat(geolocation.lon, geolocation.lat))
 					.addTo(map);
 
 				mapMarkers.push(marker);
 
-				bounds.extend(new maplibregl.LngLat(event.geolocation.lon, event.geolocation.lat));
+				bounds.extend(new maplibregl.LngLat(geolocation.lon, geolocation.lat));
 			});
 			map.fitBounds(bounds, {
 				padding: 100,

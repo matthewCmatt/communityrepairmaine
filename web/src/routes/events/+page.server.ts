@@ -1,14 +1,15 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { pb } from '#lib/pb.server.js';
-import type { Event } from '#lib/types/index.js';
+import type { EventExpanded } from '#lib/types/index.js';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	let page = parseInt(url.searchParams.get('page') ?? '1');
 
-	let events = await pb.collection('events').getList<Event>(page, 10, {
+	let events = await pb.collection('events').getList<EventExpanded>(page, 10, {
 		filter: 'published = true && end_time > @now',
-		sort: '+start_time'
+    sort: '+start_time',
+		expand: "venue"
 	});
 
 	if (events.items.length == 0) {

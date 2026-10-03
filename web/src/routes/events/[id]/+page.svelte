@@ -12,8 +12,6 @@
 
 <h2>{data.event.name}</h2>
 
-{data.event.location}<br />
-
 {data.event.description}<br />
 
 {times.date}<br />
@@ -27,4 +25,16 @@
 	{#each data.organizers as organizer}
 		<a href={`/organizers/${organizer.slug}`} class="button">{organizer.name}</a>
 	{/each}
+{/if}
+
+{#if data.venue}
+	<h3>Location</h3>
+	{data.venue.name}
+	{data.venue.street_address_1}
+	{data.venue.street_address_2}
+	{data.venue.town}, {data.venue.state}
+	{data.venue.zip_code}
+
+	<br/>
+	{data.venue.notes}
 {/if}

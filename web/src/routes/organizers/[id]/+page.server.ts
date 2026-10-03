@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { pb } from '#lib/pb.server.js';
-import { error, redirect } from '@sveltejs/kit';
-import type { Event, Organizer } from '#lib/types/index.js';
+import { error } from '@sveltejs/kit';
+import type { EventExpanded, Organizer } from '#lib/types/index.js';
 
 export const load: PageServerLoad = async ({ params }) => {
 	// Lookup slug
@@ -19,9 +19,10 @@ export const load: PageServerLoad = async ({ params }) => {
 		error(404, 'Not found');
 	}
 
-	let events = await pb.collection('events').getFullList<Event>({
+	let events = await pb.collection('events').getFullList<EventExpanded>({
 		filter: `published = true && organizers ~ "${organizer.id}"`,
-		sort: '+start_time'
+    sort: '+start_time',
+		expand: "venue"
 	});
 
 	return {

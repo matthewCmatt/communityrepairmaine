@@ -18,7 +18,9 @@
 
 {times.startTime} to {times.endTime}<br />
 
-<a href={data.event.external_links} class="button">External Link</a>
+{#if data.event.external_links}
+	<a href={data.event.external_links} class="button">External Link</a>
+{/if}
 
 {#if data.organizers}
 	<h3>Event Organizer</h3>
@@ -35,6 +37,6 @@
 	{data.venue.town}, {data.venue.state}
 	{data.venue.zip_code}
 
-	<br/>
+	<br />
 	{data.venue.notes}
 {/if}

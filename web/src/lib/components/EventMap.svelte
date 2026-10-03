@@ -46,7 +46,7 @@
 				return true;
 			});
 			events.forEach((event) => {
-				if (!event.geolocation) return;
+				if (!event.venue) return;
 
 				const el = document.createElement('div');
 

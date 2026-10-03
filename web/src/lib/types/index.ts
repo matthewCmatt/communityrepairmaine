@@ -15,7 +15,6 @@ export interface Event extends RecordModel {
 	description?: string;
 	external_links?: string;
 	organizers?: string[]; // relation → Organizer.id
-	geolocation?: { lat: number; lon: number };
 	venue?: string; // relation → Organizer.id
 }
 

@@ -16,6 +16,7 @@ export interface Event extends RecordModel {
 	external_links?: string;
 	organizers?: string[]; // relation → Organizer.id
 	venue?: string; // relation → Organizer.id
+        images?: string[];
 }
 
 export interface Venue extends RecordModel {

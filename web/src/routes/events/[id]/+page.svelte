@@ -12,7 +12,14 @@
 
 <h2>{data.event.name}</h2>
 
-{@html data.event.description}<br />
+{#if data.images}
+	{#each data.images as image}
+		<img src={image} />
+	{/each}
+	<br /><br />
+{/if}
+
+{@html data.event.description}<br /><br />
 
 {times.date}<br />
 
@@ -40,3 +47,9 @@
 	<br />
 	{data.venue.notes}
 {/if}
+
+<style>
+	img {
+		max-width: 100%;
+	}
+</style>

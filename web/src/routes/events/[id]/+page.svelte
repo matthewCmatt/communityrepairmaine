@@ -12,7 +12,7 @@
 
 <h2>{data.event.name}</h2>
 
-{data.event.description}<br />
+{@html data.event.description}<br />
 
 {times.date}<br />
 
